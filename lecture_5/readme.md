@@ -80,6 +80,53 @@ you can easily add and remove elements, and the vector  also know their size.
    an empty queue.
 
 
+# queue + stack patterns
+## common patterns and pitfalls with stack and queue
+* Idioms:
+    1. Emptying a stack/queue
+    ```
+    queue<int> queue1
+    // produce: {1,2,3,4,5,6}
+    for (int i = 0; i <=6; i++) {
+            queue1.enqueue(i);
+        }
+    // removing all the elements in queue queue1.
+    while (!queue1.isEmpty()) {
+            cout << queue1.dequeue() << "";
+        }
+        cout << endl;
+    // prints: 1 2 3 4 5 6
+    ```
+    
+    ```
+    stack<int> stack1
+    // produce: {1,2,3,4,5,6}
+    for (int i = 0; i <=6; i++) {
+            stack1.push(i);
+        }
+    // removing all the elements in queue queue1.
+    while (!stack1.isEmpty()) {
+            cout << queue1.pop() << "";
+        }
+        cout << endl;
+    // prints: 1 2 3 4 5 6
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
