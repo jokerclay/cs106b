@@ -1,0 +1,30 @@
+Start testing: Jan 10 15:19 EST
+----------------------------------------------------------
+1/1 Testing: HelloTest.BasicAssertions
+1/1 Test: HelloTest.BasicAssertions
+Command: "/home/clay/Documents/c++/cpp_advance/Programming_Abstraction_in_C++/lecture_3/google_test/build/hello_test" "--gtest_filter=HelloTest.BasicAssertions" "--gtest_also_run_disabled_tests"
+Directory: /home/clay/Documents/c++/cpp_advance/Programming_Abstraction_in_C++/lecture_3/google_test/build
+"HelloTest.BasicAssertions" start time: Jan 10 15:19 EST
+Output:
+----------------------------------------------------------
+Running main() from /home/clay/Documents/c++/cpp_advance/Programming_Abstraction_in_C++/lecture_3/google_test/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HelloTest.BasicAssertions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HelloTest
+[ RUN      ] HelloTest.BasicAssertions
+[       OK ] HelloTest.BasicAssertions (0 ms)
+[----------] 1 test from HelloTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"HelloTest.BasicAssertions" end time: Jan 10 15:19 EST
+"HelloTest.BasicAssertions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 10 15:19 EST
