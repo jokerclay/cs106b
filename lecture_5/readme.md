@@ -84,7 +84,7 @@ you can easily add and remove elements, and the vector  also know their size.
 ## common patterns and pitfalls with stack and queue
 * Idioms:
     1. Emptying a stack/queue
-    ```
+    ```c++
     queue<int> queue1
     // produce: {1,2,3,4,5,6}
     for (int i = 0; i <=6; i++) {
@@ -98,7 +98,7 @@ you can easily add and remove elements, and the vector  also know their size.
     // prints: 1 2 3 4 5 6
     ```
     
-    ```
+    ```c++
     stack<int> stack1
     // produce: {1,2,3,4,5,6}
     for (int i = 0; i <=6; i++) {
@@ -111,6 +111,97 @@ you can easily add and remove elements, and the vector  also know their size.
         cout << endl;
     // prints: 1 2 3 4 5 6
     ```
+    2. iterating over and modifying a stack/queue -> only calculate size once before looping.
+    
+    ```c++
+    queue<int> queue2 = {1,2,3,4,5,6}
+    int origQSize = queue2.size();
+    for (int i = 0; i <= origQSize; i++) {
+            int value = queue2.dequeue(); // dequeue() will remove the last element and return it,
+                                          // here, the value is the last element in queue2.
+            if (value % 2 == 0) {
+                    queue2.enqueue(value);
+            }
+    }
+    cout << queue2 << endl;
+    // prints:  {2,  4,  6}
+    ```
+
+    ```c++
+
+    stack<int> stack2 = {1,2,3,4,5,6};
+    stack<int> result;
+
+    int origQS_Size = stack2.size();
+    for (int i = 0; i < origQS_Size; i++) {
+            int value = stack2.pop();
+            // add even values to result
+            if (value % 2 == 0) {
+                result.push(value);
+            }
+    }
+    cout << result << endl;
+
+    // prints：{6,4,5}
+
+    ```
+    **if you edit the ADT within loop , ! don't use `.size()` in loop condistion**
+    **the size changes while the loop runs **
+    * unlike with queues you can not iterate a stack without destorying it.
+      it may be benificial to make a copy instead.
+
+
+# Treadeoffs with queues  and stacks （vs. other ADT）
+## what are some downside of using queue/stack ?
+1. No random access. you get the front/top or nothing.
+2. No size-effect-free traversal, you can only iterate all the element in the structure by removing pervious element first. 
+3. No easy way  to search through a queue/stack.
+## what are some benefits ?
+* Useful for lots of real word problems, many real word problem can be solved with a LIFO or FIFO model
+* very easy to build one from an array such that access is guaranteed be fast.
+
+
+
+
+# what ADT should we use ?
+For each the task, which ADT is the best suited for the task ?
+1. the undo button in a text editor.[stack]
+2. jobs submitted to a printer that can be also be cancelled [vector] any one of the jobs can be cancelled
+3. LaIR requests [queue]
+4. your browsing history [vector]
+5. google spreadsheets [queue]
+6. call center("your call will be handled by the next availble agent").[queue]
+
+# ADTs summary (so far)
+### Ordered ADTs with accessiable indices
+**type:**
+* vector (1 D) 
+* grid (2 D) 
+
+**Traits:**
+* easily able to search through all elements
+* can use the indices as a way of structuring the data
+
+### Ordered ADTs where you can't  accesse elements by index
+**type:**
+* queues (FIFO) 
+* stack (LIFO) 
+
+**Traits:**
+* constrains the way you can insert and access data
+* more efficient for solving specific LIFO/FIFO problems
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
