@@ -1,0 +1,19 @@
+
+The set s1 is : 
+60 50 40 30 20 10 
+
+The set s2 after assign from s1 is : 
+10 20 30 40 50 60 
+
+s2 after removal of elements less than 30 :
+30 40 50 60 
+s2.erase(50) : 1 removed
+30 40 60 
+s1.lower_bound(40) : 
+40
+s1.upper_bound(40) : 
+30
+s2.lower_bound(40) :
+40
+s2.upper_bound(40) : 
+60
