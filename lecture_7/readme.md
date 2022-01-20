@@ -77,34 +77,43 @@ only want to add letter to sortedString if it exits as key in map
 * we need a structured way to explore words that are "adjacent" to one anther
 
 
+## Breadth-First Search Data Structure
+we need ...
+* A data structure to represent (partial word) ladders
+    * desired characteristics: we should be easily access the  the most recent
+    word added to the word ladder 
+
+    **`stack<string>`**
+
+* A Data Structure to store all the partial word that we have generated so far
+  and have yet to explore 
+    * desired characteristics:we want to maintian an ordering of ladders such 
+      that all ladders of certain length get explored before ladders longer get 
+      explored.
+
+    **`queue<stack<string>>`**
+
+* A Data Structure to keep track of all  the words that we have explored so far
+  so that we get avoid getting stuck in loops.
+    * desired characteristics: we want to  be able to quickly decide whether or
+    not a word has been seen before.
+
+    **`set<string>`**
 
 
+## Breadth-First Search pseudocode
+```
+create an empty queue and  an empty set of visited locations
+create an initial word ladder containing the starting word and add it to the queue
+while the queue is not empty
+    remove the next partial ladder from the queue 
+    set the current search word to be the word at the top of the ladder 
+    if the current word is the destination,then return the current ladder
+    generate all "neighboring" words that are valid English words and one loop
+    over all neighbor word
+        if the neighbor has not been visited 
+            create a copy if current ladder
+            add the neighbor to the top of the new ladder and mark it visited
+            add the new ladder  to the back of the queue of partial ladders
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
